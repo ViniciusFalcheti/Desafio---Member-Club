@@ -1,0 +1,78 @@
+header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: 3.125rem 1.5625px;
+    gap: 2rem;
+
+    & .logo {
+        height: 56px;
+        width: 116px;
+    }
+
+    & img {
+        object-fit: cover;
+        width: 100%;
+    }
+
+    & .wrapper {
+        position: relative;
+        width: 25rem;
+        height: 3.5rem;
+        border-radius: 1.25rem;
+        
+        & input {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border: 1px solid var(--base-gray-400);
+            background-color: var(--base-gray-300);
+            color: var(--base-gray-500);
+            border-radius: inherit;
+            
+            padding-left: 1.25rem;
+    
+            &:focus {
+                outline: 1px solid var(--main-pink);
+            }
+        }
+
+        & button {
+            height: 70%;
+            aspect-ratio: 1;
+            background-color: var(--base-gray-700);
+            border-radius: .5rem;
+            border: none;
+
+            position: absolute;
+            right: 1.25rem;
+            top: 15%;
+            padding: .75rem;
+
+            & img {
+                object-fit: cover;                
+            }
+        }
+
+        & button:hover {
+            background-color: var(--base-gray-600);
+            cursor: pointer;
+        }
+
+        & button:disabled, button:empty {
+            background-color: rgba(51, 43, 49, .5);
+        }
+    }
+}
+
+@media (width < 40em) {
+    
+    header {
+        padding-block: 1.5rem 1.5px;
+        gap: 1rem;
+
+        & input {
+            width: 20rem;
+        }
+    }
+}

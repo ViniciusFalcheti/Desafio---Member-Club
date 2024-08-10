@@ -1,0 +1,313 @@
+main {
+    --slots-size: 5.5rem;
+    /* grid-template-columns: 2fr 1fr;
+    grid-template-rows: 25rem 25rem; */
+
+    /* width: 57rem;
+    justify-content: center; */
+    margin-inline: 15rem;
+    margin-block: 3rem 6rem;
+
+    
+    & .container {
+        border-radius: 1rem;
+        border: 1px solid var(--base-gray-300);
+        background-color: var(--base-gray-100);
+    }
+
+    & .user-info {
+        grid-area: user-info;
+        padding: 1rem;
+        align-items: center;
+
+        & p {
+            font: var(--body-text-xs);
+        }
+
+        & .user-photo {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: .5rem;
+
+
+            & img {
+                width: 100%;
+                object-fit: cover;
+                border-radius: inherit;
+
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 1px;
+                    border-radius: inherit;
+                    background: var(--gradient-base);
+                }
+            }
+        }
+
+        
+
+        & .user-name {
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+    }
+
+    & .history {
+        grid-area: cuts-history;
+        overflow: auto;
+        padding: 1.75rem 1.5rem 1.5rem;
+        flex-direction: column;
+
+        & p {
+            font: var(--body-text-xs);
+        }
+
+        & header {
+            all: unset;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+
+            & h4 {
+                color: var(--base-gray-500);
+            }
+        }
+
+        & .cuts-history {
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+            flex-direction: column;
+
+            & .history-row {
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
+
+    & .loyalty-card {
+        grid-area: loyalty-card;
+        /* background-color: yellow; */
+        /* padding: 2.25rem 2rem 2rem 2rem; */
+        padding-block: 2.25rem;
+        padding-inline: 2rem;
+        gap: 2rem;
+        flex-direction: column;
+        
+
+        & header {
+            all: unset;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            & h4 {
+                color: var(--base-gray-500);
+            }
+
+            & p {
+                font: var(--body-text-sm);
+            }
+
+            .loyalty-id {
+                background-color: var(--base-gray-300);
+
+                border-radius: 1rem;
+                padding: .75rem;
+
+                & h3 {
+                    color: var(--base-gray-500);
+                }
+            }
+        }
+
+        & .slots {
+            flex-wrap: wrap;
+            grid-template-columns: var(--slots-size) var(--slots-size) var(--slots-size) var(--slots-size) var(--slots-size);
+            grid-template-rows: var(--slots-size) var(--slots-size);
+            justify-content: center;
+
+            & .slot-item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 1rem;
+                background-color: var(--base-gray-200);
+
+                & img {
+                    width: 80%;
+                    object-fit: cover;
+                }
+
+                & img[src*="PinGift2"] {
+                    width: 50%;
+                }
+            }
+        }
+
+    }
+
+    & .remaining-cuts {
+        grid-area: remaining-cuts;
+        /* background-color: green; */
+        gap: 2rem;
+        padding: 2rem;
+        justify-content: space-between;
+        align-items: center;
+
+        & .cuts-container {
+            flex-grow: 1;
+            flex-direction: column;
+            justify-content: center;
+
+            & .cuts-content {
+                gap: 0.5rem;
+                align-items: end;
+            }
+    
+            & .progress-bar {
+                align-items: center;
+                width: 100%;
+                gap: .5rem;
+    
+                & .bar-base {
+                    border-radius: 0.5rem;
+                    background-color: var(--base-gray-300);
+                    height: 1rem;
+                    flex-grow: 1;
+
+                    & .progress {
+                        background: linear-gradient(90deg, #2DAA6E 0%, #2DAAAA 33.33%, #856CCF 66.67%, #D658B3 100%);
+                        width: 70%;
+                        height: 100%;
+                        border-radius: inherit;
+                    }
+                }
+    
+                & p {
+                    font: var(--body-text-xs);
+                }
+            }
+        }
+
+        & .prize-icon {
+            height: 4.5rem;
+            width: 4.5rem;
+            background-color: var(--base-gray-200);
+            border-radius: 50%;
+
+            & img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    grid-template-areas:
+        "user-info    user-info    loyalty-card   loyalty-card   loyalty-card"
+        "cuts-history cuts-history loyalty-card   loyalty-card   loyalty-card"
+        "cuts-history cuts-history loyalty-card   loyalty-card   loyalty-card"
+        "cuts-history cuts-history remaining-cuts remaining-cuts remaining-cuts"
+        "cuts-history cuts-history remaining-cuts remaining-cuts remaining-cuts";
+}
+
+@media (width < 80em) {
+    main {
+        margin-inline: 5rem;
+        margin-block: 2rem 3rem;
+    }
+}
+
+@media (width < 40em) {
+    main {
+        display: none;
+        --slots-size: 3.5rem;
+
+        overflow: hidden;
+
+        display: flex !important;
+        flex-direction: column;
+        gap: .5rem  !important;
+
+
+        margin-inline: 0.5rem;
+        margin-block: 1rem 2rem;
+
+        & .loyalty-card {
+            padding-block: 1.5rem 1.25rem;
+            padding-inline: 1.25rem;
+            gap: 1rem;            
+    
+            & header {
+                gap: 0.5rem;
+
+                & p {
+                    font: var(--body-text-xs);
+                }
+    
+                .loyalty-id {
+                    padding: .5rem;
+    
+                    & h3 {
+                        font: var(--heading-subtitle-sm);
+                    }
+                }
+            }
+    
+            & .slots {
+                flex-wrap: wrap;
+                grid-template-columns: var(--slots-size) var(--slots-size) var(--slots-size) var(--slots-size) var(--slots-size);
+                grid-template-rows: var(--slots-size) var(--slots-size);
+                justify-content: center;
+    
+                & .slot-item {
+                    border-radius: 1rem;
+                    background-color: var(--base-gray-200);
+                }
+            }
+    
+        }
+
+        & .remaining-cuts {
+            grid-area: remaining-cuts;
+            /* background-color: green; */
+            gap: 2rem;
+            padding: 1.25rem;
+            justify-content: space-between;
+            align-items: center;
+    
+            & .cuts-container {
+
+                & .cuts-content{
+                    p {
+                        font: var(--body-text-sm);
+                    }
+
+                    strong {
+                        font: var(--heading-title-sm);
+                    }
+                }
+        
+                & .progress-bar {
+        
+                    & .bar-base {
+                        height: .5rem;    
+                    }
+                }
+            }
+    
+            & .prize-icon {
+                height: 3.5rem;
+                width: 3.5rem;
+            }
+        }
+
+    }
+}
+

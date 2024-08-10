@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
+    <title>Member Club</title>
+</head>
+<body>
+    <header class="flex">
+        <div class="logo">
+            <img src="assets/Logo.png" alt="Member Club Logo">
+        </div>
+
+        <form>
+            <div class="wrapper">
+                <input
+                    id="cardId" 
+                    name="cardId"
+                    type="text"
+                    placeholder="ID do cartão"
+                    maxlength="15">
+                <button disabled>
+                    <img src="assets/icons/ButtonIcon.svg" alt="">
+                </button>
+            </div>
+        </form>
+    </header>
+    <main class="grid gap-1 hide">
+        <div class="user-info container flex gap-1">
+            <div class="user-photo">
+                <img src="assets/image-not-found.jpg" alt="Foto do usuário">
+            </div>
+            <div class="user-name flex">
+                <h2>Natália Miranda</h2>
+                <p>Cliente desde 18/09/2023</p>
+            </div>
+        </div>
+        <div class="history container flex gap-1">
+            <header>
+                <h4>HISTÓRICO</h4>
+                <p>7 cortes</p>
+            </header>
+            <div class="cuts-history flex">
+                <!-- <div class="history-row flex">
+                    <div>
+                        <h4>29/04/2024</h4>
+                        <p>18:30</p>
+                    </div>
+                    <img src="assets/icons/PinCheck2.png" alt="pincheck">
+                </div> -->
+            </div>
+        </div>
+        <div class="loyalty-card flex container">
+            <header>
+                <div>
+                    <h4>CARTÃO FIDELIDADE</h4>
+                    <p>Ao fazer o corte de cabelo, o décimo sai de graça!</p>
+                </div>
+                <div class="loyalty-id">
+                    <h3>ID: 124-537-835-230</h3>
+                </div>
+            </header>
+            <div class="slots grid gap-1">
+                <div class="slot-item">
+                    <img src="/assets/icons/PinCheck.png" alt="" class="hide">
+                </div>
+                <div class="slot-item">
+                    <img src="/assets/icons/PinCheck.png" alt="" class="hide">
+                </div>
+                <div class="slot-item">
+                    <img src="/assets/icons/PinCheck.png" alt="" class="hide">
+                </div>
+                <div class="slot-item">
+                    <img src="/assets/icons/PinCheck.png" alt="" class="hide">
+                </div>
+                <div class="slot-item">
+                    <img src="/assets/icons/PinCheck.png" alt="" class="hide">
+                </div>
+                <div class="slot-item">
+                    <img src="/assets/icons/PinCheck.png" alt="" class="hide">
+                </div>
+                <div class="slot-item">
+                    <img src="/assets/icons/PinCheck.png" alt="" class="hide">
+                </div>
+                <div class="slot-item">
+                    <img src="/assets/icons/PinCheck.png" alt="" class="hide">
+                </div>
+                <div class="slot-item">
+                    <img src="/assets/icons/PinCheck.png" alt="" class="hide">
+                </div>
+                <div class="slot-item">
+                    <img src="assets/icons/PinGift2.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="remaining-cuts container flex">
+            <div class="cuts-container flex gap-1">
+                <div class="cuts-content flex"><strong>3</strong><p>cortes restantes</p></div>
+                <div class="progress-bar flex">
+                    <div class="bar-base">
+                        <div class="progress"></div>
+                    </div>
+                    <p>7 de 10</p>
+                </div>
+            </div>
+            <div class="prize-icon">
+                <img src="assets/icons/PinGift.png" alt="">
+            </div>
+        </div>
+    </main>
+        <script type="module" src="scripts/main.js"></script>
+    </body>
+</html>
