@@ -1,13 +1,7 @@
 main {
     --slots-size: 5.5rem;
-    /* grid-template-columns: 2fr 1fr;
-    grid-template-rows: 25rem 25rem; */
-
-    /* width: 57rem;
-    justify-content: center; */
-    margin-inline: 15rem;
-    margin-block: 3rem 6rem;
-
+    margin: 3rem auto;
+    max-width: 1200px;
     
     & .container {
         border-radius: 1rem;
